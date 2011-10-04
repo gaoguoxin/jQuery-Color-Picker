@@ -110,12 +110,16 @@
                     info.text('#' + picker.children('.colorpicker-picker-span.active').attr('rel'));
                 });
                 picker.delegate(".colorpicker-picker-span", "click", function() {
-                    info.text('#' + $(this).attr('rel'));
                     $(obj).val($(this).attr('rel'));
                     $(obj).change();
+                });
+                $(obj).change(function(){
+                    var val = $(obj).val();
+                    info.text('#' + val);
                     picker.children('.colorpicker-picker-span.active').removeClass('active');
-                    $(this).addClass('active');
-                    trigger.css('background-color', $(this).css('background-color'));
+                    var active = $(picker).find('span.colorpicker-picker-span[rel="' +val+ '"]');
+                    $(active).addClass('active');
+                    trigger.css('background-color', '#'+val);
                 });
                 $(obj).after(picker);
             }
