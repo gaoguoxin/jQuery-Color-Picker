@@ -21,6 +21,10 @@
  * * Number: 02
  * * Bug: Selects Change event should be called on color pick
  * * Name: Bob Farrell <unknown>
+ * --
+ * * Number: 03
+ * * Bug: Change in select should update the picker
+ * * Name: Tom Lakovic <lakovic@gmail.com>
  */
 (function($) {
     $.fn.extend({
